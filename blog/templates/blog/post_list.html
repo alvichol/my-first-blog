@@ -3,16 +3,19 @@
         <title>CATS SITE</title>
     </head>
     <body>
-      <div>
-          <h1><a href="/">Cats</a></h1>
-      </div>
+        <div>
+            <h1><a href="/">Cats</a></h1>
+        </div>
 
-      {% for post in posts %}
-      <div>
-          <p>published: {{ post.published_date }}</p>
-          <h1><a href="">{{ post.title }}</a></h1>
-          <p>{{ post.text|linebreaksbr }}</p>
-      </div>
-      {% endfor %}
+        {% for post in posts %} <!-- отображает список при помощи цикла for -->
+ ‎       <div>
+ ‎            <p>published: {{ post.published_date }}</p>
+ ‎            <h1><a href="">{{ post.title }}</a></h1> <!-- Поле title модели Post. -->
+ ‎            <p>{{ post.text|linebreaksbr }}</p> <!-- Поле text модели Post. Также |linebreaksbr прогоняет текст через фильтр для преобразования переносов строк в параграфы. -->
+        </div>
+        {% endfor %}
     </body>
 </html>
+
+<!--  Всё, что размещено между for и endfor , будет повторено для каждого объекта в списке. -->
+<!-- В двойных фигурных скобках в шаблон Django вставляется переменная -->
